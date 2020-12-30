@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:los_girasoles_app/Screens/Login/login_screen.dart';
+import 'package:los_girasoles_app/constans.dart';
 
 class LoginBottons extends StatelessWidget {
   final Widget logo;
@@ -6,21 +8,32 @@ class LoginBottons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return  Column(
+    return Column(
       children: <Widget>[
+        SizedBox(height: size.height * 0.1,),
         logo,
+        SizedBox(height: size.height * 0.1,),
         Container(
             width: size.width * 0.5,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Color(0xFFFEDC741), Color(0xFFFF4A824)]),
+                  colors: kGradientColor),
               borderRadius: BorderRadius.circular(18),
             ),
             child: FlatButton(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-              onPressed: () {},
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginScreen();
+                    },
+                  ),
+                );
+              },
               child: Text(
                 "Iniciar sesión",
                 style: TextStyle(
@@ -33,7 +46,7 @@ class LoginBottons extends StatelessWidget {
         Container(
             width: size.width * 0.5,
             decoration: BoxDecoration(
-              border: Border.all(color: Color(0xFFFFE4200), width: 2),
+              border: Border.all(color: kSecondColor, width: 2),
               borderRadius: BorderRadius.circular(18),
             ),
             child: FlatButton(
