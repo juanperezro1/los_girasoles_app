@@ -8,9 +8,9 @@ class EmailField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.only(top: 120, left: 20.0, right: 20.0),
-      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: EdgeInsets.only(top: size.height * 0.1, left: 40.0, right: 40.0),
       child: TextField(
         decoration: InputDecoration(
             hintText: campo,

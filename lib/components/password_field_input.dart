@@ -4,16 +4,13 @@ import '../constans.dart';
 
 class PasswordField extends StatelessWidget {
   final String campo;
-  const PasswordField({
-    Key key,
-    this.campo
-  }) : super(key: key);
+  const PasswordField({Key key, this.campo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.only(top: 20, left: 20.0, right: 20.0),
-      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: EdgeInsets.only(top: size.height * 0.07, left: 40.0, right: 40.0),
       child: TextField(
         obscureText: true,
         decoration: InputDecoration(

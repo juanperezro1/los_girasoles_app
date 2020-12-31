@@ -8,14 +8,12 @@ class Background extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: double.infinity,
-      height: size.height,
+
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
             Positioned(
-              top: size.width - 498,
-              left: 0,
+              top: size.width - 502,
               child: SvgPicture.asset(
                 'assets/images/componente_superior.svg',
                 height: size.height * 0.4,

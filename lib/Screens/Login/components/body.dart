@@ -12,10 +12,11 @@ class Body extends StatelessWidget {
         child: SafeArea(
             child: Background(
                 child: Column(
-      mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        SizedBox(height: size.height * 0.04,),
         Container(
+          padding: EdgeInsets.symmetric(vertical: size.height * 0.03),
+          alignment: Alignment.center,
+          height: size.height * 0.2,
           child: Column(
             children: <Widget>[
               Text(
@@ -37,12 +38,18 @@ class Body extends StatelessWidget {
             ],
           ),
         ),
-        EmailField(campo: "Correo Electrónico"),
-        PasswordField(
-          campo: "Contraseña",
-        ),
-        SizedBox(height: size.height * 0.1),
-        RoundedButton(size: size)
+        Container(
+          child: Column(
+            children: <Widget>[
+              EmailField(campo: "Correo Electrónico"),
+              PasswordField(
+                campo: "Contraseña",
+              ),
+              SizedBox(height: size.height * 0.06),
+              RoundedButton(size: size)
+            ],
+          ),
+        )
       ],
     ))));
   }
