@@ -68,10 +68,17 @@ flutter:
       fonts:
         - asset: assets/fonts/Lucky-Fellas.ttf
           weight: 700
+
     - family: Sofia Pro
       fonts:
         - asset: assets/fonts/Sofia-Pro.ttf
         - asset: assets/fonts/Sofia-Thin.ttf
+          weight: 700
+          
+
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy-Thin.ttf
           weight: 700
 
     - family: Cerebri Sans

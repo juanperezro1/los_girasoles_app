@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:los_girasoles_app/Screens/Login/login_screen.dart';
+import 'package:los_girasoles_app/components/rounded_button.dart';
 import 'package:los_girasoles_app/constans.dart';
 
 class LoginBottons extends StatelessWidget {
@@ -13,33 +13,7 @@ class LoginBottons extends StatelessWidget {
         SizedBox(height: size.height * 0.1,),
         logo,
         SizedBox(height: size.height * 0.1,),
-        Container(
-            width: size.width * 0.5,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: kGradientColor),
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: FlatButton(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return LoginScreen();
-                    },
-                  ),
-                );
-              },
-              child: Text(
-                "Iniciar sesión",
-                style: TextStyle(
-                    fontFamily: 'Sofia Pro', fontSize: 18, color: Colors.white),
-              ),
-            )),
+        RoundedButton(size: size),
         SizedBox(
           height: 25,
         ),
@@ -64,3 +38,5 @@ class LoginBottons extends StatelessWidget {
     );
   }
 }
+
+
