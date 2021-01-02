@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:los_girasoles_app/Screens/Welcome/components/login_botton_landscape.dart';
-import 'package:los_girasoles_app/Screens/Welcome/components/login_bottons_portrait.dart';
+import 'package:los_girasoles_app/Screens/Welcome/components/landscape_layaout.dart';
+import 'package:los_girasoles_app/Screens/Welcome/components/portrait_layaout.dart';
 import 'package:los_girasoles_app/constans.dart';
 
 class Body extends StatelessWidget {

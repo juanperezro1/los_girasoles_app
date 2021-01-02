@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:los_girasoles_app/components/background.dart';
+import 'package:los_girasoles_app/Screens/Ingresar/components/preguntar_registro.dart';
+import 'package:los_girasoles_app/components/boton_iniciar_sesion.dart';
+import 'package:los_girasoles_app/components/boton_registrarse.dart';
 
-import 'package:los_girasoles_app/Screens/Login/components/background.dart';
-import 'package:los_girasoles_app/Screens/Login/components/preguntar_registro.dart';
 import 'package:los_girasoles_app/components/email_field_input.dart';
+import 'package:los_girasoles_app/components/ingresar_con_otro_medio.dart';
 import 'package:los_girasoles_app/components/password_field_input.dart';
-import 'package:los_girasoles_app/components/rounded_button.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -49,36 +50,14 @@ class Body extends StatelessWidget {
                     campo: "Contraseña",
                   ),
                   SizedBox(height: size.height * 0.09),
-                  RoundedButton(size: size)
+                  BotonIniciarSesion()
                 ],
               ),
             ),
             SizedBox(
               height: size.height * 0.06,
             ),
-            Container(
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    "Conecta con",
-                    style: TextStyle(fontFamily: 'Sofia Pro', fontSize: 19),
-                  ),
-                  SizedBox(height: size.height * 0.02,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SvgPicture.asset('assets/icons/facebook.svg'),
-                      VerticalDivider(
-                        color: Colors.black,
-                        thickness: 2,
-                        width: 20,
-                      ),
-                      SvgPicture.asset('assets/icons/google.svg'),
-                    ],
-                  )
-                ],
-              ),
-            ),
+            IngresarConOtroMedio(size: size),
             SizedBox(height: size.height * 0.06,),
             PreguntaRegistrarse(
               press: () {},
@@ -89,3 +68,4 @@ class Body extends StatelessWidget {
     ));
   }
 }
+

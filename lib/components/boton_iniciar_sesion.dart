@@ -3,18 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:los_girasoles_app/Screens/Ingresar/login_screen.dart';
 import '../constans.dart';
 
-class RoundedButton extends StatelessWidget {
-  const RoundedButton({
-    Key key,
-    @required this.size
+class BotonIniciarSesion extends StatelessWidget {
+  const BotonIniciarSesion({
+    Key key
   }) : super(key: key);
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: size.width * 0.5,
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -23,7 +19,7 @@ class RoundedButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(18),
         ),
         child: FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
           onPressed: () {
             Navigator.push(
               context,

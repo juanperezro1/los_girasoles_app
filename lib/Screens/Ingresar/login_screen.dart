@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:los_girasoles_app/Screens/Login/components/body.dart';
+import 'package:los_girasoles_app/Screens/Ingresar/components/body.dart';
+
 
 class LoginScreen extends StatelessWidget {
   @override

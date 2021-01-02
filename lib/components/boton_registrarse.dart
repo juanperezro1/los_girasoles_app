@@ -1,43 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:los_girasoles_app/Screens/Registrarse/registrarse_screen.dart';
 
-import 'package:los_girasoles_app/Screens/Ingresar/login_screen.dart';
 import '../constans.dart';
 
-class RoundedButton extends StatelessWidget {
-  const RoundedButton({
+class BotonRegistrarse extends StatelessWidget {
+  const BotonRegistrarse({
     Key key,
-    @required this.size
+
   }) : super(key: key);
 
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: size.width * 0.5,
+
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: kGradientColor),
+          border: Border.all(color: kSecondColor, width: 2),
           borderRadius: BorderRadius.circular(18),
         ),
         child: FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 35),
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return LoginScreen();
+                  return RegistrarseScreen();
                 },
               ),
             );
           },
           child: Text(
-            "Iniciar sesión",
+            "Registrarme",
             style: TextStyle(
-                fontFamily: 'Sofia Pro', fontSize: 18, color: Colors.white),
+                fontFamily: 'Sofia Pro',
+                fontSize: 18,
+                color: Color(0xFFF303030)),
           ),
         ));
   }
