@@ -13,13 +13,12 @@ class BotonRegistrarse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
         decoration: BoxDecoration(
           border: Border.all(color: kSecondColor, width: 2),
           borderRadius: BorderRadius.circular(18),
         ),
         child: FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 35),
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
           onPressed: () {
             Navigator.push(
               context,

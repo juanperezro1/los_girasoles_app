@@ -72,15 +72,13 @@ flutter:
     - family: Sofia Pro
       fonts:
         - asset: assets/fonts/Sofia-Pro.ttf
-        - asset: assets/fonts/Sofia-Thin.ttf
           weight: 700
 
     - family: Sofia 
       fonts:
-        - asset: assets/fonts/Sofia-Pro.ttf
+        - asset: assets/fonts/Sofia-Thin.ttf
           weight: 700
-          
-
+        
     - family: Gilroy
       fonts:
         - asset: assets/fonts/Gilroy-Thin.ttf

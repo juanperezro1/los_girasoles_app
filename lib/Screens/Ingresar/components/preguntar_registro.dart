@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:los_girasoles_app/constans.dart';
 
 class PreguntaRegistrarse extends StatelessWidget {
   final bool login;

@@ -18,7 +18,7 @@ class Background extends StatelessWidget {
               top: size.width - 502,
               child: SvgPicture.asset(
                 'assets/images/componente_superior.svg',
-                height: size.height * 0.4,
+                height: size.height * 0.43,
               ),
             ),
             child,
