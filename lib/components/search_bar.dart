@@ -19,7 +19,7 @@ class SearchBar extends StatelessWidget {
             color: Colors.grey.withOpacity(0.15),
             spreadRadius: 5,
             blurRadius: 5,
-            offset: Offset(0, 4), // changes position of shadow
+            offset: Offset(0, 4),
           ),
         ],
         color: Colors.white,
@@ -27,10 +27,9 @@ class SearchBar extends StatelessWidget {
       ),
       child: TextField(
         decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 17, vertical: 10),
+            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             hintText: "Busca tu flor",
-            hintStyle: TextStyle(
-                fontFamily: 'Sofia', color: Colors.black.withOpacity(0.2)),
+            hintStyle: TextStyle(fontFamily: 'Gilroy', color: Colors.black),
             enabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
             suffixIcon: Material(
