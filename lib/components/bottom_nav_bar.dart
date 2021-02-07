@@ -22,7 +22,7 @@ class BottomNavBar extends StatelessWidget {
             BoxShadow(
                 offset: Offset(0, -7),
                 blurRadius: 33,
-                color: Color(0xFF6DAED9).withOpacity(0.19))
+                color: Color(0xFF6DAED9).withOpacity(0.1))
           ]),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -34,25 +34,27 @@ class BottomNavBar extends StatelessWidget {
                 color: Color(0xFFFFFCB00),
               ),
               onPressed: () {
-                 Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return HomeScreen();
-                },
-              ),
-            );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomeScreen();
+                    },
+                  ),
+                );
               }),
           IconButton(
               icon: SvgPicture.asset('assets/icons/categories.svg'),
-              onPressed: () { Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return CategoriasScreen();
-                },
-              ),
-            );}),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return CategoriasScreen();
+                    },
+                  ),
+                );
+              }),
           IconButton(
               icon: SvgPicture.asset('assets/icons/heart.svg'),
               onPressed: () {}),

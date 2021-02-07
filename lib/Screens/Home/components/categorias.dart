@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:los_girasoles_app/model/categorias.dart';
 
-import '../../../constans.dart';
 
 class Categorias extends StatelessWidget {
   const Categorias({
@@ -45,7 +45,7 @@ class Categorias extends StatelessWidget {
                         height: 63,
                         width: 68,
                         child: SvgPicture.asset(
-                          categorias[index]['iconpath'],
+                          categorias[index].imagen,
                         ),
                       ),
                       // Text(

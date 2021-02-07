@@ -17,10 +17,8 @@ class Body extends StatelessWidget {
         ),
         Carousel(),
         SizedBox(height: 15),
-        Categorias()
+        //Categorias(),
       ],
     )));
   }
 }
-
-

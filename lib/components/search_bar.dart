@@ -5,7 +5,6 @@ import '../constans.dart';
 class SearchBar extends StatelessWidget {
   const SearchBar({
     Key key,
-
   }) : super(key: key);
 
   @override
@@ -30,7 +29,7 @@ class SearchBar extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.15),
+              color: Colors.grey.withOpacity(0.1),
               spreadRadius: 5,
               blurRadius: 5,
               offset: Offset(0, 4),
@@ -48,7 +47,7 @@ class SearchBar extends StatelessWidget {
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
               suffixIcon: Material(
-                elevation: 1,
+                elevation: 0,
                 color: kprimaryColor,
                 borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(13),
