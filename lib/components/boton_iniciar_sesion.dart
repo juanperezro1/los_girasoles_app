@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:los_girasoles_app/Screens/Home/components/home_page.dart';
 import 'package:los_girasoles_app/Screens/Home/home_screen.dart';
-import 'package:los_girasoles_app/Screens/Ingresar/login_screen.dart';
 import '../constans.dart';
 
 class BotonIniciarSesion extends StatelessWidget {

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:los_girasoles_app/Screens/Home/components/categorias.dart';
 import 'package:los_girasoles_app/components/search_bar.dart';
-import 'package:los_girasoles_app/components/carousel.dart';
-
-//import 'package:firebase_storage/firebase_storage.dart';
 
 class Body extends StatelessWidget {
+  const Body({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -15,12 +13,7 @@ class Body extends StatelessWidget {
         Container(
           child: SearchBar(),
         ),
-        Carousel(),
-        SizedBox(height: 15),
-        Categorias()
       ],
     )));
   }
 }
-
-

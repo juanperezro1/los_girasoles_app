@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:los_girasoles_app/Screens/Categorias/categorias_screen.dart';
+import 'package:los_girasoles_app/Screens/Home/home_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -10,7 +12,7 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15),
-      height: 75,
+      height: 68,
       width: double.infinity,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -31,10 +33,26 @@ class BottomNavBar extends StatelessWidget {
                 size: 35,
                 color: Color(0xFFFFFCB00),
               ),
-              onPressed: () {}),
+              onPressed: () {
+                 Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return HomeScreen();
+                },
+              ),
+            );
+              }),
           IconButton(
               icon: SvgPicture.asset('assets/icons/categories.svg'),
-              onPressed: () {}),
+              onPressed: () { Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return CategoriasScreen();
+                },
+              ),
+            );}),
           IconButton(
               icon: SvgPicture.asset('assets/icons/heart.svg'),
               onPressed: () {}),
