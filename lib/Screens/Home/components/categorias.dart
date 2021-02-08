@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:los_girasoles_app/model/categorias.dart';
 
-
 class Categorias extends StatelessWidget {
   const Categorias({
     Key key,
@@ -34,16 +33,9 @@ class Categorias extends StatelessWidget {
                         margin: EdgeInsets.only(left: 10),
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 10),
-                                blurRadius: 30,
-                                color: Colors.grey[300],
-                              )
-                            ],
                             borderRadius: BorderRadius.circular(15)),
-                        height: 63,
-                        width: 68,
+                        height: 100,
+                        width: 118,
                         child: SvgPicture.asset(
                           categorias[index].imagen,
                         ),

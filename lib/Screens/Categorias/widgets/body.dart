@@ -21,7 +21,7 @@ class Body extends StatelessWidget {
             padding: EdgeInsets.only(left: 10),
             child: Text(
               "Categorias",
-              style: TextStyle(fontFamily: 'Sofia Pro', fontSize: 25),
+              style: TextStyle(fontFamily: 'Sofia Pro', fontSize: 21),
             )),
         Expanded(
             child: Padding(

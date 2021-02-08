@@ -12,7 +12,7 @@ class Carousel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(left: 10, top: 10),
+          padding: EdgeInsets.only(left: 10),
           child: Text(
             "Destacadas",
             style: TextStyle(
