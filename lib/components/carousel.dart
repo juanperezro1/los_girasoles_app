@@ -14,7 +14,7 @@ class Carousel extends StatelessWidget {
         Container(
           padding: EdgeInsets.only(left: 10),
           child: Text(
-            "Destacadas",
+            "Eventos",
             style: TextStyle(
                 fontFamily: 'Sofia Pro',
                 fontSize: 21,

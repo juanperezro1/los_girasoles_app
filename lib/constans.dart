@@ -6,4 +6,8 @@ const kAppBarColor = Color(0xFFFF4A824);
 const kAppBarColorOne = Color(0xFFFEDC741);
 const kGradientColor = [Color(0xFFFEDC741), Color(0xFFFF4A824)];
 
-
+List topProductos = [
+  'Destacados',
+  'Más vendidos',
+  'Ofertas',
+];

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:los_girasoles_app/Screens/Categorias/widgets/item_categorias.dart';
+import 'package:los_girasoles_app/Screens/DetalleProducto/detalles_producto_screen.dart';
 import 'package:los_girasoles_app/components/search_bar.dart';
 import 'package:los_girasoles_app/model/categorias.dart';
 
@@ -25,15 +26,21 @@ class Body extends StatelessWidget {
             )),
         Expanded(
             child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
-          child: GridView.builder(
-              itemCount: categorias.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3, childAspectRatio: 0.75),
-              itemBuilder: (context, index) => ItemCategoria(
-                    categoria: categorias[index],
-                  )),
-        ))
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: GridView.builder(
+                  itemCount: categorias.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3, childAspectRatio: 0.75),
+                  itemBuilder: (context, index) => ItemCategoria(
+                      categoria: categorias[index],
+                      press: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetalleProductoScreen(
+                                      categoria: categorias[index],
+                                    )),
+                          )),
+                ))),
       ],
     ));
   }

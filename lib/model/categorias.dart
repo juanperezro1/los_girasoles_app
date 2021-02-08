@@ -7,8 +7,8 @@ class Categoria {
 
 List<Categoria> categorias = [
   Categoria(nombre: 'Crea tu ramo', imagen: 'assets/images/ramo.svg'),
-  Categoria(nombre: 'Cumpleaños', imagen: 'assets/images/birthday.svg'),
-  Categoria(nombre: 'Pareja', imagen: 'assets/images/couple.svg'),
-  Categoria(nombre: 'Matrimonio', imagen: 'assets/images/ring.svg'),
-  Categoria(nombre: 'Nacimiento', imagen: 'assets/images/baby.svg'),
+  Categoria(nombre: 'Cumpleaños', imagen: ''),
+  Categoria(nombre: 'Pareja', imagen: ''),
+  Categoria(nombre: 'Matrimonio', imagen: ''),
+  Categoria(nombre: 'Nacimiento', imagen: ''),
 ];
