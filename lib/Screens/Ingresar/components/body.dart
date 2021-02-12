@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:los_girasoles_app/Screens/Home/components/home_page.dart';
 
 import 'package:los_girasoles_app/components/background.dart';
 import 'package:los_girasoles_app/Screens/Ingresar/components/preguntar_registro.dart';
@@ -6,6 +7,7 @@ import 'package:los_girasoles_app/components/boton_iniciar_sesion.dart';
 import 'package:los_girasoles_app/components/email_field_input.dart';
 import 'package:los_girasoles_app/components/ingresar_con_otro_medio.dart';
 import 'package:los_girasoles_app/components/password_field_input.dart';
+import 'package:los_girasoles_app/components/rounded_button.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -15,6 +17,7 @@ class Body extends StatelessWidget {
         child: SafeArea(
       child: Background(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
               padding: EdgeInsets.symmetric(vertical: size.height * 0.02),
@@ -49,7 +52,19 @@ class Body extends StatelessWidget {
                     campo: "Contraseña",
                   ),
                   SizedBox(height: size.height * 0.09),
-                  BotonIniciarSesion()
+                  RoundedButton(
+                    text: "Iniciar Sesión",
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomePage();
+                          },
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
@@ -57,7 +72,9 @@ class Body extends StatelessWidget {
               height: size.height * 0.06,
             ),
             IngresarConOtroMedio(size: size),
-            SizedBox(height: size.height * 0.06,),
+            SizedBox(
+              height: size.height * 0.06,
+            ),
             PreguntaRegistrarse(
               press: () {},
             )
@@ -67,4 +84,3 @@ class Body extends StatelessWidget {
     ));
   }
 }
-

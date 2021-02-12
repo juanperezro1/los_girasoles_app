@@ -4,15 +4,14 @@ import 'package:los_girasoles_app/Screens/Ingresar/login_screen.dart';
 import '../constans.dart';
 
 class RoundedButton extends StatelessWidget {
-  const RoundedButton({
-    Key key,
-    @required this.size
-  }) : super(key: key);
+  const RoundedButton({Key key, this.text, this.press}) : super(key: key);
 
-  final Size size;
+  final String text;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
         width: size.width * 0.5,
         decoration: BoxDecoration(
@@ -24,18 +23,9 @@ class RoundedButton extends StatelessWidget {
         ),
         child: FlatButton(
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return LoginScreen();
-                },
-              ),
-            );
-          },
+          onPressed: press,
           child: Text(
-            "Iniciar sesión",
+            text,
             style: TextStyle(
                 fontFamily: 'Sofia Pro', fontSize: 18, color: Colors.white),
           ),

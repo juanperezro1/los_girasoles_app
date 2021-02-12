@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:los_girasoles_app/Screens/Home/home_screen.dart';
+import 'package:los_girasoles_app/Screens/Ingresar/login_screen.dart';
 import '../constans.dart';
 
 class BotonIniciarSesion extends StatelessWidget {
-  const BotonIniciarSesion({
-    Key key
-  }) : super(key: key);
+  const BotonIniciarSesion({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class BotonIniciarSesion extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return HomeScreen();
+                  return LoginScreen();
                 },
               ),
             );
