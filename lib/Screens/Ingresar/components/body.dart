@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
                   Text(
                     "¡Bienvenido!",
                     style: TextStyle(
-                        fontFamily: 'Sofia Pro',
+                        fontFamily: 'Gilroy',
                         color: Colors.white,
                         fontSize: 55,
                         fontWeight: FontWeight.bold),

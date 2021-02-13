@@ -4,18 +4,39 @@ import '../constans.dart';
 
 class EmailField extends StatelessWidget {
   final String campo;
-  const EmailField({Key key, this.campo}) : super(key: key);
+  final IconData icon;
+  final Function(String) onChange;
+  final Function(String) onSubmit;
+  final FocusNode focusNode;
+  final TextInputAction textInputAction;
+  final bool isPasswordField;
+  const EmailField(
+      {Key key,
+      this.campo,
+      this.onChange,
+      this.onSubmit,
+      this.focusNode,
+      this.icon,
+      this.textInputAction,
+      this.isPasswordField})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    bool _isPasswordField = isPasswordField ?? false;
     return Container(
       padding: EdgeInsets.only(top: size.height * 0.1, left: 40.0, right: 40.0),
       child: TextField(
+        focusNode: focusNode,
+        onChanged: onChange,
+        onSubmitted: onSubmit,
+        textInputAction: textInputAction,
+        obscureText: _isPasswordField,
         decoration: InputDecoration(
             hintText: campo,
             prefixIcon: Icon(
-              Icons.email,
+              icon,
               color: Colors.grey[400],
             ),
             hintStyle: TextStyle(fontFamily: 'Sofia Pro', fontSize: 19),
