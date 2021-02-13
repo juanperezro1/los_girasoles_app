@@ -16,14 +16,14 @@ class PreguntaRegistrarse extends StatelessWidget {
       children: <Widget>[
         Text(
           login ? "¿No tienes una cuenta? " : "¿Ya tienes una cuenta?",
-          style: TextStyle(fontFamily: 'Sofia Pro', fontSize: 19),
+          style: TextStyle(fontFamily: 'Sofia', fontSize: 19),
         ),
         GestureDetector(
             onTap: () {},
             child: Text(
               login ? "Registrate" : "Inicia sesión",
               style: TextStyle(
-                fontFamily: 'Sofia Pro',
+                fontFamily: 'Sofia',
                 fontSize: 19,
                 color: Color(0xFFFFFD32A),
               ),

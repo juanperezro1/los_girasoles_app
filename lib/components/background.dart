@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:los_girasoles_app/utils/responsive.dart';
 
 class Background extends StatelessWidget {
   final Widget child;
-  const Background({this.child});
+  final Size size;
+  const Background({this.child, this.size});
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Responsive responsive = Responsive.of(context);
     return Container(
-        //height: size.height * 0.4,
-        width: double.infinity,
         child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Positioned(
-              top: size.width - 502,
-              child: SvgPicture.asset(
-                'assets/images/componente_superior.svg',
-                height: size.height * 0.43,
-              ),
-            ),
-            child,
-          ],
-        ));
+      children: <Widget>[
+        Positioned(
+          top: -(responsive.wp(100) * 0.38),
+          child: SvgPicture.asset(
+            'assets/images/bg.svg',
+            height: responsive.hp(49),
+          ),
+        ),
+        child,
+      ],
+    ));
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:los_girasoles_app/Screens/Ingresar/components/preguntar_registro.dart';
 import 'package:los_girasoles_app/components/background.dart';
-import 'package:los_girasoles_app/components/boton_registrarse.dart';
 import 'package:los_girasoles_app/components/custom_input.dart';
 import 'package:los_girasoles_app/components/ingresar_con_otro_medio.dart';
 import 'package:los_girasoles_app/components/rounded_button.dart';

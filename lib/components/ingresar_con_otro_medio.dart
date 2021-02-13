@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,10 +15,12 @@ class IngresarConOtroMedio extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(
-            "Conecta con",
-            style: TextStyle(fontFamily: 'Sofia Pro', fontSize: 19),
+            "Conéctate con",
+            style: TextStyle(fontFamily: 'Sofia', fontSize: 19),
           ),
-          SizedBox(height: size.height * 0.02,),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

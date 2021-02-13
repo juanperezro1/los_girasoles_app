@@ -26,7 +26,8 @@ class CustomInput extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     bool _isPasswordField = isPasswordField ?? false;
     return Container(
-      padding: EdgeInsets.only(top: size.height * 0.1, left: 40.0, right: 40.0),
+      padding:
+          EdgeInsets.only(top: size.height * 0.09, left: 40.0, right: 40.0),
       child: TextField(
         focusNode: focusNode,
         onChanged: onChange,
@@ -39,9 +40,9 @@ class CustomInput extends StatelessWidget {
               icon,
               color: Colors.grey[400],
             ),
-            hintStyle: TextStyle(fontFamily: 'Sofia Pro', fontSize: 19),
+            hintStyle: TextStyle(fontFamily: 'Sofia', fontSize: 19),
             focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: kSecondColor, width: 5),
+                borderSide: BorderSide(color: kSecondColor),
                 borderRadius: BorderRadius.circular(5))),
       ),
     );

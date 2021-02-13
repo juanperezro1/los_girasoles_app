@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375.999" height="248.176" viewBox="0 0 375.999 248.176">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#edc741"/>
+      <stop offset="1" stop-color="#f4a824"/>
+    </linearGradient>
+  </defs>
+  <path id="Sustracción_12" data-name="Sustracción 12" d="M-284.395,262.176h-.012c-15.416,0-31.522-.561-47.869-1.666-13.082-.884-26.352-2.116-39.443-3.662-8.751-1.034-17.257-2.188-25.282-3.43V14H-21V187.32a497.364,497.364,0,0,1-56.646,29.452,583.348,583.348,0,0,1-102.685,34.751C-210.163,258.592-245.175,262.176-284.395,262.176Z" transform="translate(397 -14)" fill="url(#linear-gradient)"/>
+</svg>
