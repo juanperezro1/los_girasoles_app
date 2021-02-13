@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:los_girasoles_app/Screens/Ingresar/components/preguntar_registro.dart';
 import 'package:los_girasoles_app/components/background.dart';
 import 'package:los_girasoles_app/components/boton_registrarse.dart';
-import 'package:los_girasoles_app/components/email_field_input.dart';
+import 'package:los_girasoles_app/components/custom_input.dart';
 import 'package:los_girasoles_app/components/ingresar_con_otro_medio.dart';
-import 'package:los_girasoles_app/components/password_field_input.dart';
 import 'package:los_girasoles_app/components/rounded_button.dart';
 
 class Body extends StatefulWidget {
@@ -95,7 +94,7 @@ class _BodyState extends State<Body> {
                 ],
               ),
             ),
-            EmailField(
+            CustomInput(
               campo: "Correo Electrónico",
               icon: Icons.email,
               onChange: (value) {
@@ -106,7 +105,7 @@ class _BodyState extends State<Body> {
               },
               textInputAction: TextInputAction.next,
             ),
-            EmailField(
+            CustomInput(
               campo: "Contraseña",
               icon: Icons.lock,
               onChange: (value) {

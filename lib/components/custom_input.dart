@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constans.dart';
 
-class EmailField extends StatelessWidget {
+class CustomInput extends StatelessWidget {
   final String campo;
   final IconData icon;
   final Function(String) onChange;
@@ -10,7 +10,7 @@ class EmailField extends StatelessWidget {
   final FocusNode focusNode;
   final TextInputAction textInputAction;
   final bool isPasswordField;
-  const EmailField(
+  const CustomInput(
       {Key key,
       this.campo,
       this.onChange,

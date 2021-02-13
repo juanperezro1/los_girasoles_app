@@ -3,10 +3,8 @@ import 'package:los_girasoles_app/Screens/Home/components/home_page.dart';
 
 import 'package:los_girasoles_app/components/background.dart';
 import 'package:los_girasoles_app/Screens/Ingresar/components/preguntar_registro.dart';
-import 'package:los_girasoles_app/components/boton_iniciar_sesion.dart';
-import 'package:los_girasoles_app/components/email_field_input.dart';
+import 'package:los_girasoles_app/components/custom_input.dart';
 import 'package:los_girasoles_app/components/ingresar_con_otro_medio.dart';
-import 'package:los_girasoles_app/components/password_field_input.dart';
 import 'package:los_girasoles_app/components/rounded_button.dart';
 
 class Body extends StatelessWidget {
@@ -47,9 +45,10 @@ class Body extends StatelessWidget {
             Container(
               child: Column(
                 children: <Widget>[
-                  EmailField(campo: "Correo Electrónico"),
-                  PasswordField(
+                  CustomInput(campo: "Correo Electrónico"),
+                  CustomInput(
                     campo: "Contraseña",
+                    icon: Icons.lock,
                   ),
                   SizedBox(height: size.height * 0.09),
                   RoundedButton(
