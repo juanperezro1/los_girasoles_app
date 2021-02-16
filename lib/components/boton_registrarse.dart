@@ -6,9 +6,7 @@ import '../constans.dart';
 class BotonRegistrarse extends StatelessWidget {
   const BotonRegistrarse({
     Key key,
-
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,7 @@ class BotonRegistrarse extends StatelessWidget {
           borderRadius: BorderRadius.circular(18),
         ),
         child: FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
           onPressed: () {
             Navigator.push(
               context,

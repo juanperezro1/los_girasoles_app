@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:los_girasoles_app/Screens/Ingresar/components/preguntar_registro.dart';
 import 'package:los_girasoles_app/components/background.dart';
 import 'package:los_girasoles_app/components/custom_input.dart';
+import 'package:los_girasoles_app/components/header_text.dart';
 import 'package:los_girasoles_app/components/ingresar_con_otro_medio.dart';
 import 'package:los_girasoles_app/components/rounded_button.dart';
+import 'package:los_girasoles_app/utils/responsive.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -11,7 +14,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  Future<void> _alertDialogBuilder() async {
+  Future<void> _alertDialogBuilder(String error) async {
     return showDialog(
       barrierDismissible: false,
       context: context,
@@ -20,7 +23,7 @@ class _BodyState extends State<Body> {
           title: Text("Error", style: TextStyle(fontFamily: 'Sofia Pro')),
           content: Container(
             child: Text(
-              "Algo anda mal",
+              error,
               style:
                   TextStyle(fontFamily: 'Gilroy', fontWeight: FontWeight.bold),
             ),
@@ -37,6 +40,46 @@ class _BodyState extends State<Body> {
     );
   }
 
+  //Crear un nuevo usuario
+
+  Future<String> _createAccount() async {
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _registerEmail, password: _registerPassword);
+      return null;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        return 'The password provided is too weak.';
+      } else if (e.code == 'email-already-in-use') {
+        return 'The account already exists for that email.';
+      }
+      return e.message;
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  void _submitForm() async {
+
+    //Set the form to loading state
+    setState(() {
+      _registerFormLoadin = true;
+    });
+
+    //Run the create account method
+    String _createAccountFeedBack = await _createAccount();
+
+    //Validar si el fomulario no tiene errores mientras se crea una nueva cuenta
+    if (_createAccountFeedBack != null) {
+      _alertDialogBuilder(_createAccountFeedBack);
+
+      setState(() {
+        _registerFormLoadin = false;
+      });
+    }
+  }
+
+  // Variable para mostrar el load al registrarse
   bool _registerFormLoadin = false;
 
   // Form Input para realizar el registro
@@ -63,35 +106,15 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
-    return SafeArea(
-      child: SingleChildScrollView(
+    final Responsive responsive = Responsive.of(context);
+    return SingleChildScrollView(
+      child: Background(
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 40),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    "Crea una cuenta",
-                    style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        color: Colors.black,
-                        fontSize: 52,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Por favor registrese para continuar",
-                    style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        color: Colors.black,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
+            Padding(padding: EdgeInsets.only(left: 20)),
+            HeaderText(
+              title: "Crea una cuenta",
+              subtitle: "Por favor registrese para continuar",
             ),
             CustomInput(
               campo: "Correo Electrónico",
@@ -112,23 +135,24 @@ class _BodyState extends State<Body> {
               },
               focusNode: _passwordFocusNode,
               isPasswordField: true,
+              onSubmit: (value) {
+                _submitForm();
+              },
             ),
-            SizedBox(height: size.height * 0.09),
+            SizedBox(height: responsive.hp(5)),
             RoundedButton(
               text: "Registrarse",
               press: () {
-                setState(() {
-                  _registerFormLoadin = true;
-                });
+                _submitForm();
               },
               isLoading: _registerFormLoadin,
             ),
             SizedBox(
-              height: size.height * 0.06,
+              height: responsive.hp(7),
             ),
             IngresarConOtroMedio(size: size),
             SizedBox(
-              height: size.height * 0.06,
+              height: responsive.hp(7),
             ),
             PreguntaRegistrarse(
               login: false,

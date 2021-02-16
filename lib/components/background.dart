@@ -13,10 +13,10 @@ class Background extends StatelessWidget {
         child: Stack(
       children: <Widget>[
         Positioned(
-          top: -(responsive.wp(100) * 0.38),
+          //top: -(responsive.wp(100) * 0.38),
           child: SvgPicture.asset(
-            'assets/images/bg.svg',
-            height: responsive.hp(49),
+            'assets/images/background2.svg',
+            height: responsive.hp(28),
           ),
         ),
         child,
