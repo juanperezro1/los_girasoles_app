@@ -1,11 +1,12 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:los_girasoles_app/Screens/Ingresar/components/preguntar_registro.dart';
 import 'package:los_girasoles_app/components/background.dart';
 import 'package:los_girasoles_app/components/custom_input.dart';
 import 'package:los_girasoles_app/components/header_text.dart';
 import 'package:los_girasoles_app/components/ingresar_con_otro_medio.dart';
 import 'package:los_girasoles_app/components/rounded_button.dart';
+import 'package:los_girasoles_app/Screens/Ingresar/login_screen.dart';
 import 'package:los_girasoles_app/utils/responsive.dart';
 
 class Body extends StatefulWidget {
@@ -14,6 +15,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+
   Future<void> _alertDialogBuilder(String error) async {
     return showDialog(
       barrierDismissible: false,
@@ -60,7 +62,6 @@ class _BodyState extends State<Body> {
   }
 
   void _submitForm() async {
-
     //Set the form to loading state
     setState(() {
       _registerFormLoadin = true;
@@ -76,6 +77,8 @@ class _BodyState extends State<Body> {
       setState(() {
         _registerFormLoadin = false;
       });
+    } else {
+      Navigator.pop(context);
     }
   }
 
@@ -156,7 +159,16 @@ class _BodyState extends State<Body> {
             ),
             PreguntaRegistrarse(
               login: false,
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginScreen();
+                    },
+                  ),
+                );
+              },
             ),
           ],
         ),

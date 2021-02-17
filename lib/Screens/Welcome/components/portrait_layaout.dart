@@ -11,7 +11,6 @@ class LoginBottons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Responsive responsive = Responsive.of(context);
-    Size size = MediaQuery.of(context).size;
     return Column(
       children: <Widget>[
         SizedBox(

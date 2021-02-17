@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:los_girasoles_app/components/arregos_destacados.dart';
 import 'package:los_girasoles_app/components/search_bar.dart';
 import 'package:los_girasoles_app/components/carousel.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'lista_horizontal.dart';
 
@@ -27,6 +28,13 @@ class Body extends StatelessWidget {
         ),
         ListaHorizontal(indexSeleccionado: indexSeleccionado),
         AreglosDestacados(),
+        Container(
+          child: FlatButton(
+              child: Text("holi"),
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              }),
+        )
       ],
     )));
   }

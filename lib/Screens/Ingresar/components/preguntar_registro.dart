@@ -19,7 +19,7 @@ class PreguntaRegistrarse extends StatelessWidget {
           style: TextStyle(fontFamily: 'Sofia', fontSize: 19),
         ),
         GestureDetector(
-            onTap: () {},
+            onTap: press,
             child: Text(
               login ? "Registrate" : "Inicia sesión",
               style: TextStyle(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:los_girasoles_app/Screens/Home/home_screen.dart';
 import 'package:los_girasoles_app/Screens/Ingresar/login_screen.dart';
-import 'package:los_girasoles_app/utils/responsive.dart';
 import '../constans.dart';
 
 class BotonIniciarSesion extends StatelessWidget {
@@ -9,7 +7,6 @@ class BotonIniciarSesion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Responsive responsive = Responsive.of(context);
     return Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
