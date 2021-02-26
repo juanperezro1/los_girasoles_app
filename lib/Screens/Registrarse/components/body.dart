@@ -15,7 +15,6 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-
   Future<void> _alertDialogBuilder(String error) async {
     return showDialog(
       barrierDismissible: false,

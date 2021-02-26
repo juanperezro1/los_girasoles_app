@@ -33,7 +33,7 @@ class LandingPage extends StatelessWidget {
                 return Scaffold(
                   body: Center(
                     child: Text("Error: ${streamSnapshot.error}",
-                        style: TextStyle(fontFamily: 'Sofia')),
+                        style: const TextStyle(fontFamily: 'Sofia')),
                   ),
                 );
               }

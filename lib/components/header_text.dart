@@ -24,7 +24,7 @@ class HeaderText extends StatelessWidget {
             style: TextStyle(
                 fontFamily: 'Gilroy',
                 color: Colors.white,
-                fontSize: responsive.hp(5.8),
+                fontSize: responsive.hp(5.9),
                 fontWeight: FontWeight.bold),
           ),
           Text(

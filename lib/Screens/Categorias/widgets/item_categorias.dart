@@ -3,10 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:los_girasoles_app/model/categorias.dart';
 
 class ItemCategoria extends StatelessWidget {
-  final Categoria categoria;
+  final String name;
+  final String image;
   final Function press;
   const ItemCategoria({
-    this.categoria,
+    @required this.name,
+    @required this.image,
     this.press,
     Key key,
   }) : super(key: key);
@@ -39,8 +41,8 @@ class ItemCategoria extends StatelessWidget {
                     children: <Widget>[
                       Container(
                         padding: EdgeInsets.only(left: 25, top: 20),
-                        child: SvgPicture.asset(
-                          categoria.imagen,
+                        child: SvgPicture.network(
+                          image,
                           alignment: Alignment.center,
                           height: 76,
                           width: 50,
@@ -50,7 +52,7 @@ class ItemCategoria extends StatelessWidget {
                           alignment: Alignment.center,
                           padding: EdgeInsets.only(top: 100),
                           child: Text(
-                            categoria.nombre,
+                            name,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'Gilroy',

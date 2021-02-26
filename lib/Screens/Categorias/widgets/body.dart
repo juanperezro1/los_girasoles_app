@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 
 import 'package:los_girasoles_app/Screens/Categorias/widgets/item_categorias.dart';
-import 'package:los_girasoles_app/Screens/DetalleProducto/detalles_producto_screen.dart';
 import 'package:los_girasoles_app/components/search_bar.dart';
-import 'package:los_girasoles_app/model/categorias.dart';
+import 'package:los_girasoles_app/models/categories_model.dart';
+import 'package:los_girasoles_app/provider/my_provider.dart';
+import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class Body extends StatelessWidget {
-  const Body({Key key}) : super(key: key);
+  List<CategoriesModel> categoriesList = [];
 
   @override
   Widget build(BuildContext context) {
+    MyProvider provider = Provider.of<MyProvider>(context);
+    provider.getCategoriesList();
+
+    categoriesList = provider.throwCategoriesModelList;
+
     return SafeArea(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,20 +33,18 @@ class Body extends StatelessWidget {
             )),
         Expanded(
             child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                child: GridView.builder(
-                  itemCount: categorias.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, childAspectRatio: 0.75),
-                  itemBuilder: (context, index) => ItemCategoria(
-                      categoria: categorias[index],
-                      press: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DetalleProductoScreen(
-                                      categoria: categorias[index],
-                                    )),
-                          )),
+                padding: const EdgeInsets.all(10),
+                child: GridView.count(
+                  crossAxisCount: 3,
+                  childAspectRatio: 0.75,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
+                  shrinkWrap: false,
+                  primary: false,
+                  children: categoriesList
+                      .map((element) => ItemCategoria(
+                          name: element.name, image: element.image))
+                      .toList(),
                 ))),
       ],
     ));
