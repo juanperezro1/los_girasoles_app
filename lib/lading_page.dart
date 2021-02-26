@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:los_girasoles_app/Screens/Home/components/home_page.dart';
-import 'package:los_girasoles_app/Screens/Ingresar/login_screen.dart';
+import 'package:los_girasoles_app/models/products_model.dart';
+import 'package:los_girasoles_app/services/data_base.dart';
+import 'package:provider/provider.dart';
+import 'Screens/Home/widgets/home_page.dart';
+import 'Screens/Signin/login_screen.dart';
 
 class LandingPage extends StatelessWidget {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
@@ -45,12 +48,13 @@ class LandingPage extends StatelessWidget {
                 User _user = streamSnapshot.data;
 
                 // If the user is null, we're not logged in
-                if (_user == null) {
+                if (_user != null) {
                   // user not logged in, head to login
-                  return LoginScreen();
+                  return StreamProvider<List<ProductsModel>>.value(value: Database().products,
+                  child: HomePage(),);
                 } else {
                   // The user is logged in, head to homepage
-                  return HomePage();
+                  return LoginScreen();
                 }
               }
 

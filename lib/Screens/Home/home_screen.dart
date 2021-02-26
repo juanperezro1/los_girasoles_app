@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'components/home_page.dart';
+import 'package:los_girasoles_app/Screens/Home/widgets/home_page.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
