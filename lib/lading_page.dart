@@ -50,8 +50,18 @@ class LandingPage extends StatelessWidget {
                 // If the user is null, we're not logged in
                 if (_user != null) {
                   // user not logged in, head to login
-                  return StreamProvider<List<ProductsModel>>.value(value: Database().products,
-                  child: HomePage(),);
+                  return MultiProvider(
+                    providers: [
+                      StreamProvider<List<ProductsModel>>.value(
+                        value: Database().products,
+                        initialData: [],
+                      ),
+                    ],
+                    child: HomePage(),
+                  );
+
+                  // StreamProvider<List<ProductsModel>>.value(value: Database().products,
+                  // child: HomePage(),);
                 } else {
                   // The user is logged in, head to homepage
                   return LoginScreen();

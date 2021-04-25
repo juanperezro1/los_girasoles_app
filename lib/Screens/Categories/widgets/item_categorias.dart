@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:los_girasoles_app/model/categorias.dart';
 
 class ItemCategoria extends StatelessWidget {
   final String name;

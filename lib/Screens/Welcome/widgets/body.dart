@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
         children: <Widget>[
           Column(
             children: <Widget>[
-              SvgPicture.asset('assets/images/logo.svg'),
+              //SvgPicture.asset('assets/images/logo.svg'),
               Text(
                 "Los Girasoles",
                 style: TextStyle(

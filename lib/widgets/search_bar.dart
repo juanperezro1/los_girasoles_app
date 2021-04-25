@@ -12,12 +12,12 @@ class SearchBar extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Stack(children: <Widget>[
       Container(
-        height: size.height * 0.14,
+        height: size.height * 0.12,
         decoration: BoxDecoration(
           color: kAppBarColorOne,
           borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(25),
-            bottomRight: Radius.circular(25),
+            bottomLeft: Radius.circular(28),
+            bottomRight: Radius.circular(28),
           ),
         ),
       ),

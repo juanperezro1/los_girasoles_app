@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:los_girasoles_app/model/categorias.dart';
 
 class Categorias extends StatelessWidget {
   const Categorias({
@@ -23,7 +22,7 @@ class Categorias extends StatelessWidget {
           height: 128,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: categorias.length,
+              itemCount: 2,
               itemBuilder: (context, index) {
                 return Container(
                   child: Column(
@@ -37,7 +36,7 @@ class Categorias extends StatelessWidget {
                         height: 100,
                         width: 118,
                         child: SvgPicture.asset(
-                          categorias[index].imagen,
+                          'categorias[index].imagen',
                         ),
                       ),
                       // Text(

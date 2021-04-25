@@ -26,9 +26,9 @@ class FavoriteBouquets extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
-                      color: Colors.grey[300].withOpacity(0.6),
+                      color: Colors.grey[300].withOpacity(0.3),
                       blurRadius: 30,
-                      offset: Offset(-2, 20))
+                      offset: Offset(0, 20))
                 ]),
             child: Column(
               children: <Widget>[
